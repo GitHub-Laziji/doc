@@ -3,7 +3,6 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
-    {{ aaa }}
     <HelloWorld msg="Hello Vue 3 + Vite" />
   </div>
 </template>
@@ -12,14 +11,18 @@
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  components:{
+  components: {
     HelloWorld
   },
   data() {
-    // 暴露给 template
     return {
-      aaa: "aaaasdd"
+      loading: true
     }
+  },
+  mounted() {
+    fetch("./doc/content.json").then(resp => resp.json()).then(data => {
+      console.log(data)
+    })
   }
 }
 </script>

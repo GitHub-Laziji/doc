@@ -1,0 +1,12 @@
+{
+    "docs":[
+        {
+            "name":"测试",
+            "path":"test.md"
+        },
+        {
+            "name":"测试2",
+            "path":"test2.md"
+        }
+    ]
+}
