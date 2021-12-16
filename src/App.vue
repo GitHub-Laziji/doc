@@ -4,21 +4,17 @@
   <div class="header">
     <div>
       <span>Laziji</span>
-     / Laziji
+      / Laziji
     </div>
     <div style="display: flex;">
       <div style="font-size: 1.55rem;line-height: 1.3;">关于我</div>
     </div>
   </div>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-  <el-button>Default</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-button type="info">Info</el-button>
-  <el-button type="warning">Warning</el-button>
-  <el-button type="danger">Danger</el-button>
-  <el-button>中文</el-button>
+  <div class="bk">
+    <div></div>
+  </div>
+
+ 
 </template>
 
 <script >
@@ -47,14 +43,32 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 98px;
+  height: 72px;
   z-index: 1000;
-  background: #ffffffe6;
+  background: #ffffffaa;
   transition: all 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+}
+.bk {
+  background-image: url(./assets/bk.jpg);
+  background-size:140%;
+  background-position:center;
+  background-repeat:no-repeat;
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+.bk div{
+  position:absolute;
+  left: 0;
+  bottom:0;
+  z-index: 10;
+  height: 120px;
+  width: 100%;
+  background-image: linear-gradient(#ffffff00, #ffffff);
 }
 
 #app {
