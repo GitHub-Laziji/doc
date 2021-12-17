@@ -2,7 +2,8 @@
 
 <template>
   <div class="header">
-    <div>
+    <div style="display: flex;align-items: center;">
+      <img src="./assets/switch3.svg" style="height:80px">
       <span>Laziji</span>
       / Laziji
     </div>
@@ -11,10 +12,14 @@
     </div>
   </div>
   <div class="bk">
-    <div></div>
+    <div class="img">
+      Laziji
+    </div>
+    <div class="btm"></div>
   </div>
-
- 
+  <div style="padding: 40px 0;display: flex;justify-content: center;">
+    <el-button type="primary" round style="width:240px">Primary</el-button>
+  </div>
 </template>
 
 <script >
@@ -53,18 +58,30 @@ export default {
   padding: 0 16px;
 }
 .bk {
-  background-image: url(./assets/bk.jpg);
-  background-size:140%;
-  background-position:center;
-  background-repeat:no-repeat;
   width: 100%;
   height: 700px;
   position: relative;
 }
-.bk div{
-  position:absolute;
+.bk .img {
+  background-image: url(./assets/bk.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#303133;
+  font-weight: 600;
+  font-size: 10rem;
+}
+.bk .btm {
+  position: absolute;
   left: 0;
-  bottom:0;
+  bottom: 0;
   z-index: 10;
   height: 120px;
   width: 100%;
