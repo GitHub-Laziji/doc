@@ -9,8 +9,16 @@
                 <div class="desc app-text">&nbsp;/&nbsp;Designer</div>
             </div>
             <div>
-                <div class="item app-text">作品集</div>
-                <div class="item app-text">关于我</div>
+                <div
+                    class="item app-text"
+                    :class="{ active: $route.path == '/home' }"
+                    @click="to('/home')"
+                >作品集</div>
+                <div
+                    class="item app-text"
+                    :class="{ active: $route.path == '/about' }"
+                    @click="to('/about')"
+                >关于我</div>
                 <el-switch
                     v-model="theme"
                     inline-prompt
@@ -26,6 +34,9 @@
             </div>
         </div>
         <router-view />
+        <div class="footer">
+            
+        </div>
     </div>
 </template>
 
@@ -48,17 +59,20 @@ export default {
     },
     mounted() {
         fetch("./doc/_preface.md").then(resp => resp.text()).then(data => {
-            console.log(showdown)
             this.prefaceHtml = new showdown.Converter().makeHtml(data);
-            console.log(data)
         });
         fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
             this.docs = data.docs;
-            console.log(data)
+
         });
         window.onscroll = () => {
             let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            this.smHead = scrollTop > 200;
+            this.smHead = scrollTop > 100;
+        }
+    },
+    methods:{
+        to(url){
+            this.$router.push(url)
         }
     }
 }
@@ -133,7 +147,8 @@ export default {
             margin-right: 10px;
             font-weight: 600;
             color: #303133;
-            &:hover {
+            &:hover,
+            &.active {
                 padding-top: 18px;
                 padding-bottom: 18px;
                 color: #409eff;
@@ -173,9 +188,9 @@ export default {
         }
     }
     .header-sm {
-        height: 72px;
+        height: 62px;
         img {
-            height: 56px;
+            height: 50px;
         }
         .name {
             font-size: 1.2rem;
@@ -188,9 +203,6 @@ export default {
             line-height: 1.2;
             letter-spacing: 0.025rem;
         }
-    }
-    .bk {
-        height: 700px;
     }
 }
 </style>

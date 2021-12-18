@@ -3,7 +3,12 @@
 <template>
     <div class="bk">
         <div class="img-bk app-img-bk">
-            <div class="img app-text">Laziji</div>
+            <div class="img">
+                <div class="app-text">
+                    Laziji<span style="color: #f26ec1;">.</span>
+                </div>
+                <div class="line"></div>
+            </div>
         </div>
         <div class="btm app-bk-bt"></div>
     </div>
@@ -95,11 +100,19 @@ export default {
             background-position: center center;
             background-size: cover;
             display: flex;
-            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             color: #303133;
             font-weight: 600;
             font-size: 20vw;
-            padding-left: 10vw;
+            padding-left: 8vw;
+            .line {
+                width: 200px;
+                height: 16px;
+                background: #409eff;
+                margin-top: 12px;
+                margin-left: 1vw;
+            }
         }
     }
 
@@ -144,7 +157,7 @@ export default {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
     .bk {
-        height: 700px;
+        height: 800px;
     }
 }
 </style>
