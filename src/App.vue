@@ -29,30 +29,64 @@
       <div class="img">Laziji</div>
       <div class="btm"></div>
     </div>
-    <div style="padding: 40px 0;display: flex;justify-content: center;">
-      <el-button type="primary" round style="width:240px">Primary</el-button>
+    <div
+      style="padding: 40px 0;display: flex;justify-content: center;align-items: center;flex-direction: column;font-size: 20px;"
+    >
+      <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
+      <div style="width:500px;text-align: center;" v-html="prefaceHtml"></div>
+      <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
     </div>
+    <el-row :gutter="20" v-for="(doc,index) of docs" :key="index" style="margin:30px 20px 0 20px;">
+      <el-col :span="14">
+        <div style="border-radius: 5px;background: #d9ecff;height: 400px;">
+          <img :src="doc.cover" />
+        </div>
+      </el-col>
+      <el-col :span="10" style="display: flex;align-items: center;">
+        <div>
+          <div
+            style="font-size: 2.3125rem;line-height: 1.3;font-weight: 600;color: #303133;"
+          >{{ doc.name }}</div>
+          <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
+          <div style="color: #909399;">{{ doc.summary }}</div>
+          <el-button
+            type="primary"
+            :icon="icon.Mouse"
+            round
+            style="width:200px;margin-top: 30px;"
+          >查看更多</el-button>
+        </div>
+      </el-col>
+    </el-row>
     <div style="height: 800px;"></div>
   </div>
 </template>
 
 <script >
-import HelloWorld from "./components/HelloWorld.vue";
-import { Sunny, Moon } from '@element-plus/icons-vue'
+import showdown from "showdown"
+import { Sunny, Moon, Mouse } from '@element-plus/icons-vue'
+
 export default {
   components: {
-    HelloWorld
   },
   data() {
     return {
-      icon: { Sunny, Moon },
+      icon: { Sunny, Moon, Mouse },
       theme: 0,
       loading: true,
-      smHead: false
+      smHead: false,
+      prefaceHtml: "",
+      docs: []
     }
   },
   mounted() {
-    fetch("./doc/content.json").then(resp => resp.json()).then(data => {
+    fetch("./doc/_preface.md").then(resp => resp.text()).then(data => {
+      console.log(showdown)
+      this.prefaceHtml = new showdown.Converter().makeHtml(data);
+      console.log(data)
+    });
+    fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
+      this.docs = data.docs;
       console.log(data)
     });
     window.onscroll = () => {
@@ -64,13 +98,11 @@ export default {
 </script>
 
 <style  lang="less" scoped>
-@header-bk: #ffffffaa;
-
 .night {
   background: #000;
   .header {
     background: #000000aa;
-    div{
+    div {
       color: #fff !important;
     }
   }
@@ -155,7 +187,6 @@ export default {
     background-size: cover;
     display: flex;
     align-items: center;
-    // justify-content: center;
     color: #303133;
     font-weight: 600;
     font-size: 20vw;
