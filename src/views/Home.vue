@@ -35,6 +35,7 @@
                     :icon="icon.Mouse"
                     round
                     style="width:200px;margin-top: 30px;"
+                    @click="$router.push({path:'/doc',query:{path:doc.path}})"
                 >查看更多</el-button>
             </div>
         </el-col>

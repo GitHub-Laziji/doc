@@ -34,8 +34,27 @@
             </div>
         </div>
         <router-view />
+        <div class="social">
+            <div v-for="(item,index) of socialAccounts">
+                <div class="icon"></div>
+                <div class="type app-text">{{ item.type }}</div>
+            </div>
+        </div>
         <div class="footer">
-            
+            <img src="./assets/fb3.svg" />
+            <div class="menu">
+                <div
+                    class="item"
+                    :class="{ active: $route.path == '/home' }"
+                    @click="to('/home')"
+                >作品集</div>
+                <div
+                    class="item"
+                    :class="{ active: $route.path == '/about' }"
+                    @click="to('/about')"
+                >关于我</div>
+            </div>
+            <div class="desc">Made with Laziji | © whatever year this is</div>
         </div>
     </div>
 </template>
@@ -54,7 +73,8 @@ export default {
             loading: true,
             smHead: false,
             prefaceHtml: "",
-            docs: []
+            docs: [],
+            socialAccounts: []
         }
     },
     mounted() {
@@ -63,15 +83,16 @@ export default {
         });
         fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
             this.docs = data.docs;
+            this.socialAccounts = data.socialAccounts;
 
         });
-        window.onscroll = () => {
+        window.addEventListener('scroll', () => {
             let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             this.smHead = scrollTop > 100;
-        }
+        });
     },
-    methods:{
-        to(url){
+    methods: {
+        to(url) {
             this.$router.push(url)
         }
     }
@@ -155,6 +176,72 @@ export default {
                 border-bottom: 4px solid #409eff;
             }
         }
+    }
+}
+.social {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+        margin: 30px;
+    }
+    .icon {
+        background: #409eff;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+    }
+    .type {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        letter-spacing: 0.01rem;
+    }
+}
+.footer {
+    margin-top: 100px;
+    background: #00121a;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img {
+        height: 80px;
+    }
+    .menu {
+        margin-top: 10px;
+        display: flex;
+        height: 90px;
+        align-items: center;
+        .item {
+            padding: 0 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-bottom: 4px solid #00000000;
+            border-top: 4px solid #00000000;
+            margin-right: 10px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.55rem;
+            line-height: 1.3;
+            letter-spacing: 0.025rem;
+            &:hover {
+                padding-top: 18px;
+                padding-bottom: 18px;
+                color: #409eff;
+                border-bottom: 4px solid #409eff;
+            }
+        }
+    }
+    .desc {
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 10px;
+        letter-spacing: 0.1rem;
     }
 }
 @media (min-width: 576px) {

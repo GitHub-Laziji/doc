@@ -6,7 +6,7 @@ tags:
 - Java
 ---
 
-
+![a](./doc/test/switch3.svg)
 # 测试
 ```java
 public class Main {

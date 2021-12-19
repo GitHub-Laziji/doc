@@ -1,4 +1,16 @@
 {
+    "socialAccounts":[
+        {
+            "type":"微博",
+            "url":"http://..."
+        },{
+            "type":"哔哩哔哩",
+            "url":"http://..."
+        },{
+            "type":"知乎",
+            "url":"http://..."
+        }
+    ],
     "docs":[
         {
             "name":"测试ssssss",
