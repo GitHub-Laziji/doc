@@ -16,7 +16,7 @@
         style="padding: 40px 0;display: flex;justify-content: center;align-items: center;flex-direction: column;font-size: 20px;"
     >
         <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
-        <div class="app-text" style="width:500px;text-align: center;" v-html="prefaceHtml"></div>
+        <div class="markdown-body" style="width:500px;text-align: center;" v-html="prefaceHtml"></div>
         <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
     </div>
     <el-row :gutter="20" v-for="(doc,index) of docs" :key="index" class="doc-item">
