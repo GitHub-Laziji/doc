@@ -2,35 +2,35 @@
     "socialAccounts":[
         {
             "type":"微博",
-            "icon":"./icon/dajumao.svg",
+            "icon":"./img/dajumao.svg",
             "url":"http://..."
         },{
             "type":"哔哩哔哩",
-            "icon":"./icon/lanbaimao.svg",
+            "icon":"./img/lanbaimao.svg",
             "url":"http://..."
         },{
             "type":"知乎",
-            "icon":"./icon/lanmao.svg",
+            "icon":"./img/lanmao.svg",
             "url":"http://..."
         }
     ],
     "docs":[
         {
             "name":"测试ssssss",
-            "cover":"/doc/test/switch3.svg",
+            "cover":"./doc/img/switch3.svg",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
-            "path":"/doc/test/index.md"
+            "path":"/doc/p1.md"
         },
         {
             "name":"测试",
-            "cover":"/doc/test/switch3.svg",
+            "cover":"./doc/img/switch3.svg",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
             "path":"test.md"
         },
         {
             "name":"测试2",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
-            "cover":"/doc/test/switch3.svg",
+            "cover":"./doc/img/switch3.svg",
             "path":"test2.md"
         }
     ]
