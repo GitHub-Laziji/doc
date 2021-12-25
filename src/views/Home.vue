@@ -140,7 +140,7 @@ export default {
         margin: 30px 20px 0 20px;
         .img-bk {
             border-radius: 5px;
-            // background: #d9ecff;
+            background: #d9ecff;
             height: 400px;
             overflow: hidden;
             img{
