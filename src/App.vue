@@ -13,7 +13,7 @@
                     class="item app-text"
                     :class="{ active: $route.path == '/home' }"
                     @click="to('/home')"
-                >作品集</div>
+                >首页</div>
                 <div
                     class="item app-text"
                     :class="{ active: $route.path == '/about' }"
@@ -50,7 +50,7 @@
                     class="item"
                     :class="{ active: $route.path == '/home' }"
                     @click="to('/home')"
-                >作品集</div>
+                >首页</div>
                 <div
                     class="item"
                     :class="{ active: $route.path == '/about' }"

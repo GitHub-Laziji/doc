@@ -17,20 +17,20 @@
     "docs":[
         {
             "name":"测试ssssss",
-            "cover":"./img/switch3.svg",
+            "cover":"./img/pl.svg",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
             "path":"./doc/p1.md"
         },
         {
             "name":"测试",
-            "cover":"./img/switch3.svg",
+            "cover":"./img/m.svg",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
             "path":"./doc/test.md"
         },
         {
             "name":"测试2",
             "summary":"简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息简要信息",
-            "cover":"./img/switch3.svg",
+            "cover":"./img/car.svg",
             "path":"./doc/test2.md"
         }
     ]

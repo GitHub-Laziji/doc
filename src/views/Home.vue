@@ -36,7 +36,7 @@
                         type="primary"
                         :icon="icon.Mouse"
                         round
-                        style="width:200px;margin-top: 30px;"
+                        style="width:200px;margin-top: 90px;"
                         @click="$router.push({ path: '/doc', query: { path: doc.path } })"
                     >查看更多</el-button>
                 </div>
@@ -140,9 +140,10 @@ export default {
         margin: 30px 20px 0 20px;
         .img-bk {
             border-radius: 5px;
-            background: #d9ecff;
+            background: #fafafa;
             height: 400px;
             overflow: hidden;
+            border: 1px solid #DCDFE6;
             img{
                 height: 100%;
                 width: 100%;
