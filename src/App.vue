@@ -81,11 +81,7 @@ export default {
         }
     },
     mounted() {
-        fetch("./doc/_preface.md",{
-            headers:{
-                
-            }
-        }).then(resp => resp.text()).then(data => {
+        fetch("./doc/_preface.md").then(resp => resp.text()).then(data => {
             this.prefaceHtml = new showdown.Converter().makeHtml(data);
         });
         fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
