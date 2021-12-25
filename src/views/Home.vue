@@ -21,7 +21,7 @@
             <div class="markdown-body" style="width:500px;text-align: center;" v-html="prefaceHtml"></div>
             <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
         </div>
-        <el-row :gutter="20" v-for="(doc,index) of docs" :key="index" class="doc-item">
+        <el-row :gutter="40" v-for="(doc,index) of docs" :key="index" class="doc-item">
             <el-col :span="14">
                 <div class="img-bk">
                     <img :src="doc.cover" />
@@ -135,12 +135,18 @@ export default {
     margin-top: -60px;
     z-index: 2;
     background: #fff;
+    padding: 3vw;
     .doc-item {
         margin: 30px 20px 0 20px;
         .img-bk {
             border-radius: 5px;
-            background: #d9ecff;
+            // background: #d9ecff;
             height: 400px;
+            overflow: hidden;
+            img{
+                height: 100%;
+                width: 100%;
+            }
         }
         .title {
             font-size: 2.3125rem;

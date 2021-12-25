@@ -37,7 +37,9 @@
         <router-view />
         <div class="social">
             <div v-for="(item,index) of socialAccounts">
-                <div class="icon"></div>
+                <div class="icon">
+                    <img :src="item.icon">
+                </div>
                 <div class="type app-text">{{ item.type }}</div>
             </div>
         </div>
@@ -188,13 +190,18 @@ export default {
     justify-content: center;
     align-items: center;
     > div {
-        margin: 30px;
+        margin: 60px;
     }
     .icon {
-        background: #409eff;
+        // background: #409eff;
         border-radius: 50%;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        img{
+            height: 100%;
+            width: 100%;
+        }
     }
     .type {
         margin-top: 10px;
