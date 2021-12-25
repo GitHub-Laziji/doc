@@ -2,15 +2,15 @@
     "socialAccounts":[
         {
             "type":"微博",
-            "icon":"/icon/dajumao.svg",
+            "icon":"./icon/dajumao.svg",
             "url":"http://..."
         },{
             "type":"哔哩哔哩",
-            "icon":"/icon/lanbaimao.svg",
+            "icon":"./icon/lanbaimao.svg",
             "url":"http://..."
         },{
             "type":"知乎",
-            "icon":"/icon/lanmao.svg",
+            "icon":"./icon/lanmao.svg",
             "url":"http://..."
         }
     ],
