@@ -19,6 +19,7 @@
                     :class="{ active: $route.path == '/about' }"
                     @click="to('/about')"
                 >关于我</div>
+
                 <el-switch
                     v-model="theme"
                     inline-prompt
@@ -116,6 +117,9 @@ export default {
     }
     &-bk-bt {
         background-image: linear-gradient(#ffffff00, #1f2223) !important;
+    }
+    &-bk{
+         background: #1f2223;
     }
 }
 .night {
@@ -268,7 +272,7 @@ export default {
         .desc {
             font-size: 1.3rem;
         }
-        > div:last-child div {
+        .item{
             font-size: 1.55rem;
             line-height: 1.3;
             letter-spacing: 0.025rem;
@@ -285,7 +289,7 @@ export default {
         .desc {
             font-size: 1.2rem;
         }
-        > div:last-child div {
+        .item{
             font-size: 1.35rem;
             line-height: 1.2;
             letter-spacing: 0.025rem;
