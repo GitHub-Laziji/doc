@@ -90,6 +90,7 @@ export default {
     z-index: 2;
     background: var(--color-body-bk);
     padding: 3vw;
+    overflow: hidden;
 }
 </style>
 

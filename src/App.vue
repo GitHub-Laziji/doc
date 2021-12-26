@@ -130,12 +130,14 @@ export default {
         line-height: 1.3;
         letter-spacing: 0.025rem;
         font-size: var(--fs-header-name);
+        display: var(--dp-header-name);
     }
     .desc {
         transition: all 0.4s ease;
         font-weight: 600;
         color: var(--color-text2);
         font-size: var(--fs-header-desc);
+        display: var(--dp-header-name);
     }
     .item {
         padding: 0 30px;
@@ -175,13 +177,13 @@ export default {
     justify-content: center;
     align-items: center;
     > div {
-        margin: 60px;
+        margin: var(--len-account-mg);
     }
     .icon {
         // background: #409eff;
         border-radius: 50%;
-        width: 100px;
-        height: 100px;
+        width: var(--len-account-h);
+        height: var(--len-account-h);
         overflow: hidden;
         img {
             height: 100%;

@@ -32,22 +32,37 @@
 
 
 :root {
-    @media (min-width: 576px) {}
+    --len-header-icon-h   : 70px;
+    --len-header-h        : 98px;
+    --len-header-icon-h-sm: 58px;
+    --len-header-h-sm     : 63px;
+    --len-home-cover-h    : 400px;
+    --len-account-h       : 70px;
+    --len-account-mg      : 20px;
 
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {}
+    --len-home-doc-cover-w: 100%;
+    --len-home-doc-op-w   : 100%;
 
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {}
+    --fs-header-name   : 1rem;
+    --fs-header-desc   : 1rem;
+    --fs-header-item   : 1rem;
+    --fs-header-name-sm: 1rem;
+    --fs-header-desc-sm: 1rem;
+    --fs-header-item-sm: 1rem;
 
+    --dp-header-name: none;
 
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
-        --len-header-icon-h: 70px;
-        --len-header-h     : 98px;
+    @media (min-width: 576px) {
+        --len-header-icon-h   : 70px;
+        --len-header-h        : 98px;
         --len-header-icon-h-sm: 58px;
-        --len-header-h-sm  : 63px;
-        --len-home-cover-h : 900px;
+        --len-header-h-sm     : 63px;
+        --len-home-cover-h    : 900px;
+        --len-account-h       : 80px;
+        --len-account-mg      : 50px;
+
+        --len-home-doc-cover-w: 60%;
+        --len-home-doc-op-w   : 40%;
 
         --fs-header-name   : 1.3rem;
         --fs-header-desc   : 1.3rem;
@@ -55,6 +70,63 @@
         --fs-header-name-sm: 1.2rem;
         --fs-header-desc-sm: 1.2rem;
         --fs-header-item-sm: 1.35rem;
+
+        --dp-header-name: block;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+        --len-header-icon-h   : 70px;
+        --len-header-h        : 98px;
+        --len-header-icon-h-sm: 58px;
+        --len-header-h-sm     : 63px;
+        --len-home-cover-h    : 900px;
+
+        --fs-header-name   : 1.3rem;
+        --fs-header-desc   : 1.3rem;
+        --fs-header-item   : 1.55rem;
+        --fs-header-name-sm: 1.2rem;
+        --fs-header-desc-sm: 1.2rem;
+        --fs-header-item-sm: 1.35rem;
+
+        --dp-header-name: block;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+        --len-header-icon-h   : 70px;
+        --len-header-h        : 98px;
+        --len-header-icon-h-sm: 58px;
+        --len-header-h-sm     : 63px;
+        --len-home-cover-h    : 900px;
+
+        --fs-header-name   : 1.3rem;
+        --fs-header-desc   : 1.3rem;
+        --fs-header-item   : 1.55rem;
+        --fs-header-name-sm: 1.2rem;
+        --fs-header-desc-sm: 1.2rem;
+        --fs-header-item-sm: 1.35rem;
+
+        --dp-header-name: block;
+    }
+
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        --len-header-icon-h   : 70px;
+        --len-header-h        : 98px;
+        --len-header-icon-h-sm: 58px;
+        --len-header-h-sm     : 63px;
+        --len-home-cover-h    : 900px;
+
+        --fs-header-name   : 1.3rem;
+        --fs-header-desc   : 1.3rem;
+        --fs-header-item   : 1.55rem;
+        --fs-header-name-sm: 1.2rem;
+        --fs-header-desc-sm: 1.2rem;
+        --fs-header-item-sm: 1.35rem;
+
+        --dp-header-name: block;
     }
 }
 
