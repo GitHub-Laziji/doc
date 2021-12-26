@@ -1,21 +1,21 @@
 
 
 <template>
-    <div :class="['day', 'night'][theme]">
-        <div class="header app-header-bk" :class="[smHead ? 'header-sm' : '']">
+    <div class="app" :class="['day', 'night'][theme]">
+        <div class="header" :class="[smHead ? 'header-sm' : '']">
             <div>
                 <img src="./assets/fb3.svg" />
-                <div class="name app-text">Laziji</div>
-                <div class="desc app-text">&nbsp;/&nbsp;Designer</div>
+                <div class="name">Laziji</div>
+                <div class="desc">&nbsp;/&nbsp;Designer</div>
             </div>
             <div>
                 <div
-                    class="item app-text"
+                    class="item"
                     :class="{ active: $route.path == '/home' }"
                     @click="to('/home')"
                 >首页</div>
                 <div
-                    class="item app-text"
+                    class="item"
                     :class="{ active: $route.path == '/about' }"
                     @click="to('/about')"
                 >关于我</div>
@@ -38,9 +38,9 @@
         <div class="social">
             <div v-for="(item,index) of socialAccounts">
                 <div class="icon">
-                    <img :src="item.icon">
+                    <img :src="item.icon" />
                 </div>
-                <div class="type app-text">{{ item.type }}</div>
+                <div class="type">{{ item.type }}</div>
             </div>
         </div>
         <div class="footer">
@@ -103,29 +103,8 @@ export default {
 </script>
 
 <style  lang="less" scoped>
-.night /deep/ .app {
-    &-text {
-        color: #fff !important;
-    }
-    &-header-bk {
-        background: #000000aa !important;
-    }
-    &-img-bk {
-        background-image: linear-gradient(
-            -20deg,
-            #2b5876 0%,
-            #4e4376 100%
-        ) !important;
-    }
-    &-bk-bt {
-        background-image: linear-gradient(#ffffff00, #1f2223) !important;
-    }
-    &-bk{
-         background: #1f2223;
-    }
-}
-.night {
-    background: #1f2223;
+.app {
+    background: var(--color-body-bk);
 }
 .header {
     position: fixed;
@@ -133,25 +112,56 @@ export default {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: #ffffffaa;
+    height: var(--len-header-h);
+    background: var(--color-header-bk);
     transition: all 0.4s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    &.header-sm {
+        --len-header-h: var(--len-header-h-sm);
+        --len-header-icon-h: var(--len-header-icon-h-sm);
+        --fs-header-name: var(--fs-header-name-sm);
+        --fs-header-desc: var(--fs-header-desc-sm);
+        --fs-header-item: var(--fs-header-item-sm);
+    }
     img {
+        height: var(--len-header-icon-h);
         transition: all 0.4s ease;
     }
     .name {
-        color: #303133;
+        color: var(--color-text1);
         transition: all 0.4s ease;
         margin-left: 16px;
         font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: 0.025rem;
+        font-size: var(--fs-header-name);
     }
     .desc {
         transition: all 0.4s ease;
         font-weight: 600;
-        color: #909399;
+        color: var(--color-text2);
+        font-size: var(--fs-header-desc);
+    }
+    .item {
+        padding: 0 30px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        border-bottom: 4px solid #00000000;
+        border-top: 4px solid #00000000;
+        margin-right: 10px;
+        font-weight: 600;
+        color: var(--color-text1);
+        font-size: var(--fs-header-item);
+        &:hover,
+        &.active {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: var(--color-primary);
+            border-bottom: 4px solid var(--color-primary);
+        }
     }
     > div:first-child {
         display: flex;
@@ -165,23 +175,6 @@ export default {
         height: 100%;
         transition: all 0.4s ease;
         margin-right: 30px;
-        .item {
-            padding: 0 30px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border-bottom: 4px solid #00000000;
-            border-top: 4px solid #00000000;
-            margin-right: 10px;
-            font-weight: 600;
-            color: #303133;
-            &:hover,
-            &.active {
-                padding-top: 18px;
-                padding-bottom: 18px;
-                color: #409eff;
-                border-bottom: 4px solid #409eff;
-            }
-        }
     }
 }
 .social {
@@ -198,12 +191,13 @@ export default {
         width: 100px;
         height: 100px;
         overflow: hidden;
-        img{
+        img {
             height: 100%;
             width: 100%;
         }
     }
     .type {
+        color: var(--color-text1);
         margin-top: 10px;
         text-align: center;
         font-size: 1.25rem;
@@ -255,63 +249,6 @@ export default {
         letter-spacing: 0.1rem;
     }
 }
-@media (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-    .header {
-        height: 98px;
-        img {
-            height: 70px;
-        }
-        .name {
-            font-size: 1.3rem;
-        }
-        .desc {
-            font-size: 1.3rem;
-        }
-        .item{
-            font-size: 1.55rem;
-            line-height: 1.3;
-            letter-spacing: 0.025rem;
-        }
-    }
-    .header-sm {
-        height: 62px;
-        img {
-            height: 50px;
-        }
-        .name {
-            font-size: 1.2rem;
-        }
-        .desc {
-            font-size: 1.2rem;
-        }
-        .item{
-            font-size: 1.35rem;
-            line-height: 1.2;
-            letter-spacing: 0.025rem;
-        }
-    }
-}
 </style>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-}
-* {
-    box-sizing: border-box;
-    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-        "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-}
 </style>

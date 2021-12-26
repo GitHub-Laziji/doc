@@ -5,73 +5,35 @@
         <div class="img-bk">
             <div class="img">
                 <div>
-                    Laziji
+                    {{name}}
                     <span style="color: #f26ec1;">.</span>
                 </div>
                 <div class="line"></div>
             </div>
         </div>
-        <!-- <div class="btm app-bk-bt"></div> -->
     </div>
-    <div class="main-bk">
-        <div
-            style="padding: 40px 0;display: flex;justify-content: center;align-items: center;flex-direction: column;font-size: 20px;"
-        >
-            <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
-            <div class="markdown-body" style="width:500px;text-align: center;" v-html="prefaceHtml"></div>
-            <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
-        </div>
-        <el-row :gutter="40" v-for="(doc,index) of docs" :key="index" class="doc-item">
-            <el-col :span="14">
-                <div class="img-bk">
-                    <img :src="doc.cover" />
-                </div>
-            </el-col>
-            <el-col :span="10" style="display: flex;align-items: center;">
-                <div>
-                    <div class="title">{{ doc.name }}</div>
-                    <div class="dv"></div>
-                    <div class="summary">{{ doc.summary }}</div>
-                    <el-button
-                        type="primary"
-                        :icon="icon.Mouse"
-                        round
-                        style="width:200px;margin-top: 90px;"
-                        @click="$router.push({ path: '/doc', query: { path: doc.path } })"
-                    >查看更多</el-button>
-                </div>
-            </el-col>
-        </el-row>
-    </div>
+    <div class="main-bk"></div>
 </template>
 
 <script >
-import showdown from "showdown"
-import { Sunny, Moon, Mouse } from '@element-plus/icons-vue'
+import { Sunny, Moon } from '@element-plus/icons-vue'
 
 export default {
     components: {
     },
+    props: {
+        name: {
+            type: String
+        }
+    },
     data() {
         return {
-            icon: { Sunny, Moon, Mouse },
-            theme: 0,
-            loading: true,
-            smHead: false,
-            prefaceHtml: "",
-            docs: []
+            icon: { Sunny, Moon },
+            loading: true
         }
     },
     mounted() {
-        fetch("./doc/_preface.md").then(resp => resp.text()).then(data => {
-            console.log(showdown)
-            this.prefaceHtml = new showdown.Converter().makeHtml(data);
-            console.log(data)
-        });
-        fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
-            this.docs = data.docs;
-            console.log(data)
-        });
+
     }
 }
 </script>

@@ -1,0 +1,70 @@
+:root {
+    --color-primary: #409EFF;
+    --color-success: #67C23A;
+    --color-warning: #E6A23C;
+    --color-danger : #F56C6C;
+    --color-info   : #909399;
+}
+
+.day {
+    --color-text1    : #303133;
+    --color-text2    : #606266;
+    --color-text3    : #909399;
+    --color-text4    : #C0C4CC;
+    --color-header-bk: #ffffffaa;
+    --color-body-bk  : #ffffff;
+
+    --img-home-cover: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
+}
+
+.night {
+    --color-text1    : #ffffff;
+    --color-text2    : #ffffff;
+    --color-text3    : #ffffff;
+    --color-text4    : #ffffff;
+    --color-header-bk: #000000aa;
+    --color-body-bk  : #1f2223;
+
+    --img-home-cover: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+}
+
+
+
+
+:root {
+    @media (min-width: 576px) {}
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {}
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {}
+
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        --len-header-icon-h: 70px;
+        --len-header-h     : 98px;
+        --len-header-icon-h-sm: 58px;
+        --len-header-h-sm  : 63px;
+        --len-home-cover-h : 900px;
+
+        --fs-header-name   : 1.3rem;
+        --fs-header-desc   : 1.3rem;
+        --fs-header-item   : 1.55rem;
+        --fs-header-name-sm: 1.2rem;
+        --fs-header-desc-sm: 1.2rem;
+        --fs-header-item-sm: 1.35rem;
+    }
+}
+
+body {
+    margin : 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
