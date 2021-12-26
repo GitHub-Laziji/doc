@@ -1,36 +1,30 @@
 
 
 <template>
-    <div class="bk">
-        <div class="img-bk app-img-bk">
-            <div class="img"></div>
-        </div>
-        <!-- <div class="btm app-bk-bt"></div> -->
-    </div>
-    <div class="main-bk app-bk">
-        <div style="padding:16px">
-            <div style="display: flex;justify-content: center;padding: 60px;position: relative;">
-               
-                <div style="text-align: center;">
-                    <div class="app-text" style="font-weight: 600;font-size: 2.4rem;">关于我</div>
-                    <div class="dv" style="width:140px;height:8px"></div>
+    <home-cover :height="240">
+        <template v-slot>
+            <div style="padding:16px">
+                <div
+                    style="display: flex;justify-content: center;padding: 60px;position: relative;"
+                >
+                    <div>
+                        <img src="../assets/icon/buoumao-xiyouse.svg" />
+                    </div>
                 </div>
-                 <div style="position: absolute; left: 0;top: 0;"> 
-                    <img src="../assets/icon/buoumao-xiyouse.svg" />
-                </div>
-            </div>
 
-            <div class="markdown-body" v-html="html"></div>
-        </div>
-    </div>
+                <div class="markdown-body" v-html="html"></div>
+            </div>
+        </template>
+    </home-cover>
 </template>
 
 <script >
 import showdown from "showdown"
-import { Sunny, Moon, Mouse } from '@element-plus/icons-vue'
+import HomeCover from "../components/HomeCover.vue"
 
 export default {
     components: {
+        HomeCover
     },
     data() {
         return {

@@ -1,7 +1,7 @@
 
 
 <template>
-    <div class="app" :class="['day', 'night'][theme]">
+    <div class="app" :class="theme">
         <div class="header" :class="[smHead ? 'header-sm' : '']">
             <div>
                 <img src="./assets/fb3.svg" />
@@ -25,8 +25,8 @@
                     inline-prompt
                     :active-icon="icon.Sunny"
                     :inactive-icon="icon.Moon"
-                    :inactive-value="0"
-                    :active-value="1"
+                    inactive-value="day"
+                    active-value="night"
                     active-color="#303133"
                     inactive-color="#303133"
                     border-color="#303133"
@@ -63,31 +63,23 @@
 </template>
 
 <script >
-import showdown from "showdown"
-import { Sunny, Moon, Mouse } from '@element-plus/icons-vue'
+import { Sunny, Moon } from '@element-plus/icons-vue'
 
 export default {
     components: {
     },
     data() {
         return {
-            icon: { Sunny, Moon, Mouse },
-            theme: 0,
+            icon: { Sunny, Moon },
+            theme: "day",
             loading: true,
             smHead: false,
-            prefaceHtml: "",
-            docs: [],
             socialAccounts: []
         }
     },
     mounted() {
-        fetch("./doc/_preface.md").then(resp => resp.text()).then(data => {
-            this.prefaceHtml = new showdown.Converter().makeHtml(data);
-        });
         fetch("./doc/_content.json").then(resp => resp.json()).then(data => {
-            this.docs = data.docs;
             this.socialAccounts = data.socialAccounts;
-
         });
         window.addEventListener('scroll', () => {
             let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;

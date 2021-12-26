@@ -1,18 +1,20 @@
 
 
 <template>
-    <div class="bk">
+    <div class="bk" :style="{height:height?(height+'px'):null}">
         <div class="img-bk">
             <div class="img">
-                <div>
-                    {{name}}
+                <div v-if="title">
+                    {{ title }}
                     <span style="color: #f26ec1;">.</span>
                 </div>
-                <div class="line"></div>
+                <div v-if="title" class="line"></div>
             </div>
         </div>
     </div>
-    <div class="main-bk"></div>
+    <div class="main-bk">
+        <slot></slot>
+    </div>
 </template>
 
 <script >
@@ -22,8 +24,11 @@ export default {
     components: {
     },
     props: {
-        name: {
+        title: {
             type: String
+        },
+        height: {
+            type: Number
         }
     },
     data() {
@@ -85,29 +90,6 @@ export default {
     z-index: 2;
     background: var(--color-body-bk);
     padding: 3vw;
-    .doc-item {
-        margin: 30px 20px 0 20px;
-        .img-bk {
-            border-radius: 5px;
-            background: #fafafa;
-            height: 400px;
-            overflow: hidden;
-            border: 1px solid #dcdfe6;
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
-        .title {
-            font-size: 2.3125rem;
-            line-height: 1.3;
-            font-weight: 600;
-            color: var(--color-text1);
-        }
-        .summary {
-            color: var(--color-text3);
-        }
-    }
 }
 </style>
 
