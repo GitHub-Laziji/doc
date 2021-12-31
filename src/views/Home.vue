@@ -26,7 +26,7 @@
                         type="primary"
                         :icon="icon.Mouse"
                         round
-                        style="width:200px;margin-top: 90px;"
+                        class="btn"
                         @click="$router.push({ path: '/doc', query: { path: doc.path } })"
                     >查看更多</el-button>
                 </div>
@@ -79,7 +79,7 @@ export default {
     .cover {
         border-radius: 5px;
         background: #fafafa;
-        height: 400px;
+        height: var(--len-doc-cover-h);
         overflow: hidden;
         border: 1px solid #dcdfe6;
         width: var(--len-home-doc-cover-w);
@@ -93,6 +93,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: var(--pd-doc-op);
         .title {
             font-size: 2.3125rem;
             line-height: 1.3;
@@ -101,6 +102,10 @@ export default {
         }
         .summary {
             color: var(--color-text3);
+        }
+        .btn {
+            width: 200px;
+            margin-top: var(--len-doc-op-btn-mt);
         }
     }
 }

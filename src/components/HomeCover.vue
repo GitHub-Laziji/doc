@@ -84,7 +84,7 @@ export default {
     }
 }
 .main-bk {
-    border-radius: 60px 60px 0 0;
+    border-radius: var(--len-main-bk-rd) var(--len-main-bk-rd) 0 0;
     box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.2);
     margin-top: -60px;
     z-index: 2;
