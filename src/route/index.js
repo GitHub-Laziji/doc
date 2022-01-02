@@ -9,7 +9,7 @@ export const routes = [
         path: "/about",
         name: "about",
         component: () => import("../views/About.vue")
-    },{
+    }, {
         path: "/doc",
         name: "doc",
         component: () => import("../views/Doc.vue")
@@ -17,5 +17,8 @@ export const routes = [
 ]
 export default createRouter({
     history: createWebHashHistory(),
-    routes
+    routes,
+    scrollBehavior() {
+        return { top: 0 }
+    }
 })

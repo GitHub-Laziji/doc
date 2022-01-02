@@ -9,7 +9,7 @@
                 <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
                 <div
                     class="markdown-body"
-                    style="width:500px;text-align: center;"
+                    style="width:500px;max-width:100%;text-align: center;"
                     v-html="prefaceHtml"
                 ></div>
                 <div style="width: 80px;height: 4px;background: #409eff;margin: 24px 0;"></div>
